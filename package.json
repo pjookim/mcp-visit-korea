@@ -1,0 +1,31 @@
+{
+  "name": "mcp-ktour",
+  "version": "0.1.0",
+  "description": "MCP server for Korean tourism information",
+  "author": "Pyungjoo Kim",
+  "homepage": "https://github.com/pjookim/mcp-visit-korea",
+  "bugs": "https://github.com/pjookim/mcp-visit-korea/issues",
+  "type": "module",
+  "bin": {
+    "mcp-server-filesystem": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && shx chmod +x dist/*.js",
+    "prepare": "npm run build",
+    "watch": "tsc --watch"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.5.0",
+    "axios": "^1.8.4",
+    "zod": "^3.24.2",
+    "zod-to-json-schema": "^3.24.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "shx": "^0.3.4",
+    "typescript": "^5.3.3"
+  }
+}

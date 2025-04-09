@@ -1,0 +1,17 @@
+# dependencies
+/node_modules
+/dist
+
+# testing
+/coverage
+
+# misc
+.DS_Store
+*.pem
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
