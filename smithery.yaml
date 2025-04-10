@@ -1,0 +1,29 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    properties:
+      tourApiKey:
+        type: string
+        description: API key for TOUR_API. If not provided, calls depending on API key
+          may fail.
+    default: {}
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => {
+      const env = {};
+      if (config.tourApiKey) {
+        env.TOUR_API_KEY = config.tourApiKey;
+      }
+      return {
+        command: 'node',
+        args: ['dist/index.js'],
+        env
+      };
+    }
+  exampleConfig:
+    tourApiKey: YOUR_TOUR_API_KEY
